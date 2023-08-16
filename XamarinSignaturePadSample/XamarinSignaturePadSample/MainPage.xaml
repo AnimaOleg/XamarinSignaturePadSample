@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinSignaturePadSample.MainPage"
+             xmlns:controls="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"  >-->
+
+    <!--<StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            
+            --><!--
+            StrokeWidth — Thickness of the text.
+            StrokeColor — Text color.
+            CaptionText — Text that will appear below the line.
+            -->
+            <!--WidthRequest=”280″
+            HeightRequest=”350″--><!--
+            <controls:SignaturePadView x:Name           = "signatureView"
+                                       StrokeColor      = "Black"
+                                       StrokeWidth      = "2"
+                                       CaptionText      = "Write your sign"
+                                       CaptionTextColor = "#FA58F4"
+                                       CaptionFontSize  = "14"
+                                       PromptText       = "Leomaris Reyes"
+                                       PromptTextColor  = "#FA58F4"
+                                       PromptFontSize   = "14"
+                                       BackgroundColor  = "#CEE3F6"
+                                       WidthRequest="280"
+                                       HeightRequest="350">
+                <Button Clicked="Save" Text="Save"/>
+            </controls:SignaturePadView>
+        </Frame>
+    </StackLayout>
+    
+</ContentPage>
+-->
+
+
+
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamarinSignaturePadSample.MainPage"
+    xmlns:signature="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms">
+                <ContentPage.Content>
+                    <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" Padding="10">
+
+                            <signature:SignaturePadView x:Name="signature" HorizontalOptions="FillAndExpand" StrokeColor="Blue"
+                                VerticalOptions="StartAndExpand" HeightRequest="300" MinimumHeightRequest="300" />
+
+                            <Button x:Name="btnSubmit" Text="Submit Signature" HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start" Visual="Material" Clicked="BtnSubmit_Clicked"/>
+
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="210"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="*"/>
+
+                                </Grid.RowDefinitions>
+                                <Image x:Name="imgSignature" Grid.Row="0" Grid.Column="0" HeightRequest="200" WidthRequest="200"
+                                    Margin="2" VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                                <Label Text="Base64 string of Signature" Margin="2" VerticalOptions="Start" HorizontalOptions="Start"
+                                    Grid.Row="1" Grid.Column="0"/>
+                                <Label x:Name="lblBase64Value" Grid.Row="2" Grid.Column="0" VerticalOptions="FillAndExpand"
+                                    HorizontalOptions="FillAndExpand" Margin="2"/>
+                            </Grid>
+
+                        </StackLayout>
+                    </ScrollView>
+                </ContentPage.Content>
+            </ContentPage>
+
